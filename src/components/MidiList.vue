@@ -49,15 +49,16 @@ export default {
         console.error("Gagal mengambil daftar file:", error);
       }
     },
-    async deleteMidi(fileName) {
-      try {
-        await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/files`, {
-          params: { filename: fileName }
+    deleteMidi(fileName) {
+      // Delete request sent using the MIDI file name as a URL segment
+      axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/files/${encodeURIComponent(fileName)}`)
+        .then((response) => {
+          console.log(response.data.message);
+          this.fetchMidiFiles();
+        })
+        .catch((error) => {
+          console.error("Gagal menghapus file:", error);
         });
-        this.fetchMidiFiles();
-      } catch (error) {
-        console.error("Gagal menghapus file:", error);
-      }
     },
     async downloadMidi(fileName) {
       window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/files/download?filename=${encodeURIComponent(fileName)}`;
