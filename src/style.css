@@ -55,10 +55,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Style the refresh button with a distinct color */
+/* Replace the existing refresh button style */
 button.refresh {
-  background-color: #007bff;
+  background-color: black;
+  color: white;
   margin-bottom: 1rem;
+}
+
+/* Add new download button style */
+button.download-button {
+  background-color: blue;
+  color: white;
 }
 
 .card {

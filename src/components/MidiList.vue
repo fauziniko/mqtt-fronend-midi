@@ -15,7 +15,7 @@
           <td>{{ midi.name }}</td>
           <td>
             <button class="delete-button" @click="deleteMidi(midi.name)">Hapus</button>
-            <button @click="downloadMidi(midi.name)">Unduh</button>
+            <button class="download-button" @click="downloadMidi(midi.name)">Unduh</button>
           </td>
         </tr>
       </tbody>
