@@ -6,7 +6,7 @@ COPY package.json ./
 # Install dependencies
 RUN yarn install
 # Set PATH environment variable
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH="/app/node_modules/.bin:$PATH"
 # Copy the rest of the files
 COPY . .
 # Build the app (this will generate a dist folder)
