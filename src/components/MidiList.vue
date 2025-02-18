@@ -14,7 +14,7 @@
         <tr v-for="(midi, index) in midis" :key="index">
           <td>{{ midi.name }}</td>
           <td>
-            <button @click="deleteMidi(midi.name)">Hapus</button>
+            <button class="delete-button" @click="deleteMidi(midi.name)">Hapus</button>
             <button @click="downloadMidi(midi.name)">Unduh</button>
           </td>
         </tr>
@@ -65,3 +65,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.delete-button {
+  background-color: red;
+  color: white;
+}
+</style>
